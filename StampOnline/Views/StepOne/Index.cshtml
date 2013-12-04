@@ -1,0 +1,26 @@
+﻿@using StampOnline.Models
+@model List<OStamp>
+@{
+    ViewBag.Title = "Step 1";
+    ViewBag.Progress = 1;    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="subHeader">
+    @ViewBag.Title : <progress value="@ViewBag.Progress" max="4"></progress>
+    <h3>Choose a layout</h3>
+</div>
+
+<div>
+    <p>Either <p />
+    <a href="/StepTwo">I. Start with blank textplate</a>
+    <p>Or</p>
+    II. Choose textplate from below <br/>
+    @foreach (var template in Model)
+    {
+        <a href="/StepTwo/DisplayFromTemplate/@template.Id">
+         <img src="@template.PreviewUrl" class="previewImages" />
+        </a>
+    }
+
+</div>
+

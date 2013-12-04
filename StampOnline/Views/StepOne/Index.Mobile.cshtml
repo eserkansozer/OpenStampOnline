@@ -1,0 +1,35 @@
+﻿@using StampOnline.Models
+@model List<OStamp>
+@{
+    ViewBag.Title = "Step 1";
+    ViewBag.Progress = 1;    
+}
+
+
+<div class="subHeader">
+    <h3>Choose a layout</h3>
+</div>
+
+<div>
+    <ul data-role="listview" data-filter="false" data-inset="true">
+        <li>
+            <a href="/StepTwo">
+                <h2>Start with blank textplate</h2>
+            </a>
+        </li>
+        @foreach (var template in Model)
+        {
+            <li>
+                <a href="/StepTwo/DisplayFromTemplate/@template.Id">
+                    <img src="@template.PreviewUrl" class="previewImages" /> 
+                    <h2>@template.PadColour</h2>
+                    <p>Select this template</p>
+                </a> 
+            </li>
+        }            
+    </ul>
+    
+
+
+</div>
+

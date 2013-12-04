@@ -1,0 +1,22 @@
+﻿@media only screen and (max-width: 900px) {
+    body, input, select, button {
+        font-size: .80em;
+    }
+    
+    #mainContent {
+        width:90%;
+    }
+
+    input {
+        display:block;
+    }
+
+    div#logo {
+        background:url("/images/logo.jpg") repeat center;
+        min-height:40px;
+    }
+
+    #optionsSecondRow, #optionsFirstRow {
+        display:block;
+    }
+ }

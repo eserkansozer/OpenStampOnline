@@ -1,0 +1,32 @@
+﻿@model StampOnline.Models.OStamp
+
+@{
+    ViewBag.Title = "Step 3";
+    ViewBag.Progress = 3; 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="subHeader">
+    @ViewBag.Title : <progress value="@ViewBag.Progress" max="4"></progress>
+    <h2>Order</h2>
+</div>
+
+@using (Html.BeginForm("Save","StepThree"))
+{
+    <div id="formElements" class="horizontallyStacked">
+        
+        <input id="PadColour" name="PadColour" value="@Model.PadColour"  list="Colours" placeholder="Pad Colour" autocomplete="off" required autofocus />
+        <input id="HandleColour" name="HandleColour" value="@Model.HandleColour" list="Colours" placeholder="Handle Colour" autocomplete="off" required />
+        <datalist id="Colours">
+            <option value="Black" />
+            <option value="Blue" />
+            <option value="Red" />
+            <option value="White" />
+        </datalist>
+        <input id="Order_Quantity" name="Order.Quantity" type="number" min="1" max="10" value="@Model.Order.Quantity" required />
+
+        <input type="submit" value="Save" />
+
+    </div>
+}
+

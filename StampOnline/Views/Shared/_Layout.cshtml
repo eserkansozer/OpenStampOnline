@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>StampOnline : @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/modernizr")
+    
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div id="mainContent">
+        <header>
+            <h1 style="color:forestgreen">StampOnline</h1>
+            <div id="logo"></div>
+            <h2 style="color:GrayText">The best online stamp site around!</h2>
+        </header>                    
+        <section id="sseSection">
+            Number of orders so far: <span id="orderCount"></span>
+        </section>
+        <section>
+            @RenderBody()
+         </section>
+    </div>
+    <script>
+        if (typeof StampOnline == "undefined") StampOnline = {};
+
+        StampOnline.UpdateOrderCount = function (event) {
+            $("#orderCount").html(event.data);
+        }
+
+        $(document).ready(function () {           
+            if (!!window.EventSource) {
+                var source = new EventSource('/OrderCounter');
+                source.onmessage = StampOnline.UpdateOrderCount;
+            }
+        });
+    </script>
+</body> 
+</html>

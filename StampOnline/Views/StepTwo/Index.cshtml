@@ -1,0 +1,97 @@
+﻿@model StampOnline.Models.OStamp
+
+@{
+    ViewBag.Title = "Step 2";
+    ViewBag.Progress = 2; 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var imgsrc = string.Empty;
+    if(Model.Graphic != null)
+    {    
+        imgsrc = Model.Graphic.Url == string.Empty ? "" : "/Graphics/" + Model.Graphic.Url;
+    }
+}
+
+<div class="subHeader">
+    @ViewBag.Title : <progress value="@ViewBag.Progress" max="4"></progress>
+    <h2>Select Stamp Details</h2>
+</div>
+<div style="max-width:136px">
+    <img id="graphicOrigin" src="@imgsrc" draggable="true" ondragstart="StampOnline.Drag(event)"/>
+</div>
+<span id="dragMe" style="display:none">Drag me to preview!</span>
+<div id="preview" class="preview center">
+    <div id="TopLeft" class="graphicPlaceHolderTopDown" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
+    <div id="Top" class="graphicPlaceHolderTopDown" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
+    <div id="TopRight" class="graphicPlaceHolderTopDown" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
+    <div id="Left" class="graphicPlaceHolderMiddle" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
+    <div id="linesWrapper" class="linesWrapper">
+        <div id="line1" class="previewLine"></div>
+        <div id="line2" class="previewLine"></div>
+        <div id="line3" class="previewLine"></div>
+        <div id="line4" class="previewLine"></div>
+        <div id="line5" class="previewLine"></div>
+    </div>
+    <div id="Right" class="graphicPlaceHolderMiddle" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
+    <div id="BottomLeft" class="graphicPlaceHolderTopDown" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
+    <div id="Bottom" class="graphicPlaceHolderTopDown" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
+    <div id="BottomRight" class="graphicPlaceHolderTopDown" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
+</div>
+
+@using (Html.BeginForm("Continue", "StepTwo", FormMethod.Post))
+{
+    <div id="Lines">
+        <table class="stampLinesTable center" border="0">
+            <tr>
+                <th>Line Nr</th>
+                <th>Text</th>
+                <th>Font</th>
+                <th>Font Size</th>
+                <th style="font-weight: bolder">B</th>
+                <th style="font-style: italic">I</th>
+                <th style="text-decoration: underline">U</th>
+            </tr>
+            @Html.DisplayFor(model => model.StampLines)
+        </table>
+    </div>
+    <div id="AdditionalConfigurations">
+        <div id="optionsFirstRow">
+            <fieldset id="HorAlign">
+                <legend>Horizontal Alignment:</legend>
+                <img title="Left" alt="Left" class="alignmentImage" src="~/Images/h_align_left.gif" style="border:@(Model.Alignment == "Left" ? "solid" : "none")" />
+                <img title="Center" alt="Center" class="alignmentImage" src="~/Images/h_align_center.gif" style="border:@(Model.Alignment == "Center" ? "solid" : "none")" />
+                <img title="Right" alt="Right" class="alignmentImage" src="~/Images/h_align_right.gif" style="border:@(Model.Alignment == "Right" ? "solid" : "none")"  />
+                @Html.HiddenFor(model => model.Alignment)
+            </fieldset>
+            <fieldset id="VerAlign">
+                <legend>Vertical Alignment:</legend>
+                <img title="Top" alt="Top" class="vAlignmentImage" src="~/Images/h_align_left.gif" style="border:@(Model.VAlign == "Top" ? "solid" : "none")" />
+                <img title="Center" alt="Center" class="vAlignmentImage" src="~/Images/h_align_center.gif" style="border:@(Model.VAlign == "Center" ? "solid" : "none")" />
+                <img title="Bottom" alt="Bottom" class="vAlignmentImage" src="~/Images/h_align_right.gif" style="border:@(Model.VAlign == "Bottom" ? "solid" : "none")"  />
+                @Html.HiddenFor(model => model.VAlign)
+            </fieldset>
+        </div>
+        <div id="optionsSecondRow">
+            <fieldset id="Border">
+                <legend>Border:</legend>
+                @Html.ValueFor(model => model.Border)
+                @Html.HiddenFor(model => model.Border)
+            </fieldset>
+            <fieldset id="PadColour">
+                <legend>Pad Colour:</legend>
+                @Html.ValueFor(model => model.PadColour)
+                @Html.HiddenFor(model => model.PadColour)
+            </fieldset>
+        </div>
+    </div>
+    <p>
+     <a id="generatePdf" href="/StepTwo/GeneratePdf">Generate PDF</a>
+    </p>
+    <p>
+     <a id="addRemoveGraphic" href="/StepTwo/DisplayGraphicFrame" onclick="return StampOnline.ShowModal('/StepTwo/DisplayGraphicFrame')">Add/Remove Graphic</a>
+     @Html.HiddenFor(model=>model.Graphic.Position)
+    </p>
+    <input type="submit" value="Continue" />
+}
+
+    @Scripts.Render("~/Content/js")

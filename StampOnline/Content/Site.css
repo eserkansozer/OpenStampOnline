@@ -1,0 +1,171 @@
+﻿body {
+    font-size: 1em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+    display:inline;
+}
+
+legend {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*----------------------------*/
+
+@-ms-viewport {
+    width: device-width;
+}
+
+.lineNr {
+    font-weight:bold;
+}
+
+.alignmentImage
+{
+    padding: 1px;    
+}
+
+.vAlignmentImage
+{
+    padding: 1px;    
+}
+
+.preview {
+    border:dashed thin;
+    width:210px;
+    height:160px;  
+    margin:10px;  
+}
+
+header {
+    text-align:center;        
+}
+
+.subHeader {
+    border:dashed thin;
+    padding:5px;
+}
+
+table {
+    border:thin solid;
+}
+
+section {
+}
+
+.center {
+    margin-left:auto;
+    margin-right:auto
+}
+
+#mainContent {
+    margin-left:auto;
+    margin-right:auto;
+    width:60%;
+}
+
+.graphicPlaceHolderTopDown {
+    width:60px;
+    min-height:10px;
+    max-height:100px;
+    border:thin dotted;
+    display:inline-block;
+}
+
+.graphicPlaceHolderMiddle {
+    min-width:20px;
+    max-width:60px;
+    height:70px;
+    border:thin dotted;
+    display:inline-block;
+}
+
+.previewLine {
+    border:thin dotted;
+    display:block;
+    min-width:140px;
+}
+
+.linesWrapper {
+    display:inline-block;
+    max-width:142px;
+}
+
+.formElements {
+    width:100%;
+}
+
+.previewImages {
+    border:solid; 
+    border-color:black;    
+}
+
+img {
+    max-width: 100%;
+    height:auto;
+}
+
+div#logo {
+    background:url("/images/logo.jpg") repeat center;
+    min-height:80px;
+}
+
+progress {
+    max-width: 100%;
+}
+
+#optionsSecondRow, #optionsFirstRow {
+    display:inline;
+}
+

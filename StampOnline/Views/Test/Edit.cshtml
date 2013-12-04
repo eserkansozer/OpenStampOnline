@@ -1,0 +1,118 @@
+﻿@model StampOnline.Models.OStamp
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>OStamp</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsTemplate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsTemplate)
+            @Html.ValidationMessageFor(model => model.IsTemplate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Alignment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Alignment)
+            @Html.ValidationMessageFor(model => model.Alignment)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Border)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Border)
+            @Html.ValidationMessageFor(model => model.Border)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Length)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Length)
+            @Html.ValidationMessageFor(model => model.Length)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Width)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Width)
+            @Html.ValidationMessageFor(model => model.Width)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumberOfRows)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NumberOfRows)
+            @Html.ValidationMessageFor(model => model.NumberOfRows)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VAlign)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VAlign)
+            @Html.ValidationMessageFor(model => model.VAlign)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PadColour)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PadColour)
+            @Html.ValidationMessageFor(model => model.PadColour)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HandleColour)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HandleColour)
+            @Html.ValidationMessageFor(model => model.HandleColour)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PdfUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PdfUrl)
+            @Html.ValidationMessageFor(model => model.PdfUrl)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreviewUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreviewUrl)
+            @Html.ValidationMessageFor(model => model.PreviewUrl)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

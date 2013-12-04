@@ -1,0 +1,96 @@
+﻿@model StampOnline.Models.OStamp
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>OStamp</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsTemplate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsTemplate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Alignment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Alignment)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Border)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Border)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Length)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Length)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Width)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Width)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberOfRows)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberOfRows)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VAlign)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VAlign)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PadColour)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PadColour)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HandleColour)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HandleColour)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PdfUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PdfUrl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PreviewUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PreviewUrl)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

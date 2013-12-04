@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Confirmation";
+    ViewBag.Progress = 4; 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="subHeader">
+    @ViewBag.Title : <progress value="@ViewBag.Progress" max="4"></progress>
+    <h2>Saved</h2>
+</div>

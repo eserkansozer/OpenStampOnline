@@ -1,0 +1,41 @@
+﻿@model StampOnline.Models.Graphic
+@{
+    var imgsrc = Model.Url == string.Empty ? "" : "/Graphics/" + Model.Url;
+    Layout = null;
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/css")
+}
+
+<fieldset id="Graphic">
+    <legend>Graphic:</legend>
+    @using (Html.BeginForm("UploadFile", "StepTwo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.HiddenFor(model => model.Id)
+        <label>Filename:</label>@Html.DisplayFor(model => model.Url) @Html.HiddenFor(model => model.Url)
+        <div style="max-width:136px"><img id="uploadedImage" src="@imgsrc" /></div>        
+        <br /> @:Size : <input id="sizeRange" type="range" min="1" max="100" value="@Model.Size" onchange="UpdateImageSize()"/>
+        <input type="file" id="file" name="file" />
+        <input type="submit" name="Upload" value="Upload Graphic" formaction="/StepTwo/UploadFile" />
+        <input type="submit" name="Remove" value="Remove Graphic" formaction="/StepTwo/RemoveFile" />  
+    }
+
+    <button onclick="CloseThePopup();">Close</button>
+    <script>
+        function UpdateImageSize()
+        {
+            $("#uploadedImage").css("width", $("#sizeRange").val() + "%");
+        }
+
+        function CloseThePopup()
+        {
+            var o = new Object();
+            o.src = '@imgsrc';
+            o.size = $("#sizeRange").val();
+            window.returnValue = o;
+            if (window.opener) {
+                window.opener.returnValue = o;
+            }
+            window.close()
+        }
+    </script>
+</fieldset>

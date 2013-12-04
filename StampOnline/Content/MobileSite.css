@@ -1,0 +1,26 @@
+﻿@media only screen and (max-width: 500px) {
+    body, select, button {
+        font-size: 0.70em ;
+    }
+
+    input {
+        font-size: 0.80em;
+    }
+    
+    header {
+        background-color:lightgreen;
+     }
+
+    #mainContent {
+        width:100%;
+    }
+
+    fieldset {
+        display:block;
+        width:auto;
+    }
+
+    div#logo, #sseSection, #addRemoveGraphic, #generatePdf {
+        display:none;
+    }
+}
