@@ -65,9 +65,9 @@
             </fieldset>
             <fieldset id="VerAlign">
                 <legend>Vertical Alignment:</legend>
-                <img title="Top" alt="Top" class="vAlignmentImage" src="~/Images/h_align_left.gif" style="border:@(Model.VAlign == "Top" ? "solid" : "none")" />
-                <img title="Center" alt="Center" class="vAlignmentImage" src="~/Images/h_align_center.gif" style="border:@(Model.VAlign == "Center" ? "solid" : "none")" />
-                <img title="Bottom" alt="Bottom" class="vAlignmentImage" src="~/Images/h_align_right.gif" style="border:@(Model.VAlign == "Bottom" ? "solid" : "none")"  />
+                <img title="Top" alt="Top" class="vAlignmentImage" src="~/Images/v_align_top.gif" style="border:@(Model.VAlign == "Top" ? "solid" : "none")" />
+                <img title="Center" alt="Center" class="vAlignmentImage" src="~/Images/v_align_center.gif" style="border:@(Model.VAlign == "Center" ? "solid" : "none")" />
+                <img title="Bottom" alt="Bottom" class="vAlignmentImage" src="~/Images/v_align_bottom.gif" style="border:@(Model.VAlign == "Bottom" ? "solid" : "none")"  />
                 @Html.HiddenFor(model => model.VAlign)
             </fieldset>
         </div>
