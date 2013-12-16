@@ -71,16 +71,10 @@ textarea {
     font-weight:bold;
 }
 
-.alignmentImage
+.alignmentImage, .vAlignmentImage, .colorImage
 {
     padding: 1px;    
 }
-
-.vAlignmentImage
-{
-    padding: 1px;    
-}
-
 .borderImage
 {
     padding: 1px;    

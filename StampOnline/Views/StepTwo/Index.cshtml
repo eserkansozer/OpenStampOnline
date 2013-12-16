@@ -80,9 +80,12 @@
                 <img title="Solid" data-sel="Solid" class="borderImage" src="~/Images/solid_border.gif" style="border:@(Model.Border == "Solid" ? "solid" : "none")" />                 
                 @Html.HiddenFor(model => model.Border)
             </fieldset>
-            <fieldset id="PadColour">
+            <fieldset id="PadColours">
                 <legend>Pad Colour:</legend>
-                @Html.ValueFor(model => model.PadColour)
+                <img title="Black" data-sel="Black" class="colorImage" src="~/Images/black.gif" style="border:@(Model.PadColour == "Black" ? "solid" : "none")" />
+                <img title="Blue" data-sel="Blue" class="colorImage" src="~/Images/blue.gif" style="border:@(Model.PadColour == "Blue" ? "solid" : "none")" />
+                <img title="Red" data-sel="Red" class="colorImage" src="~/Images/red.gif" style="border:@(Model.PadColour == "Red" ? "solid" : "none")" />
+                <img title="Green" data-sel="Green" class="colorImage" src="~/Images/green.gif" style="border:@(Model.PadColour == "Green" ? "solid" : "none")" />                 
                 @Html.HiddenFor(model => model.PadColour)
             </fieldset>
         </div>

@@ -41,6 +41,14 @@ StampOnline.BorderClick = function () {
     });
 };
 
+StampOnline.ColourClick = function () {
+    $(".colorImage").click(function () {
+        $("#PadColour").val($(this).attr("data-sel"));
+        $(".colorImage").css("border", "none");
+        $(this).css("border", "solid");
+    });
+};
+
 StampOnline.BuildPLStyle = function (line) {
     var isBold = $("[name $= 'Bold']", line).attr("checked") == "checked";
     var isItalic = $("[name $= 'Italic']", line).attr("checked") == "checked";
@@ -112,6 +120,7 @@ $(document).ready(function () {
     StampOnline.HAlignmentClick();
     StampOnline.VAlignmentClick();
     StampOnline.BorderClick();
+    StampOnline.ColourClick();
     StampOnline.BuildPreviewContent();
     $("input").change(StampOnline.BuildPreviewContent);
 });
