@@ -19,7 +19,7 @@ StampOnline.Drop =  function(ev) {
 StampOnline.HAlignmentClick = function()
 {
     $(".alignmentImage").click(function () {
-        $("#Alignment").val($(this).attr("alt"));
+        $("#Alignment").val($(this).attr("data-sel"));
         $(".alignmentImage").css("border", "none");
         $(this).css("border", "solid");
     });
@@ -27,8 +27,16 @@ StampOnline.HAlignmentClick = function()
 
 StampOnline.VAlignmentClick = function () {
     $(".vAlignmentImage").click(function () {
-        $("#VAlign").val($(this).attr("alt"));
+        $("#VAlign").val($(this).attr("data-sel"));
         $(".vAlignmentImage").css("border", "none");
+        $(this).css("border", "solid");
+    });
+};
+
+StampOnline.BorderClick = function () {
+    $(".borderImage").click(function () {
+        $("#Border").val($(this).attr("data-sel"));
+        $(".borderImage").css("border", "none");
         $(this).css("border", "solid");
     });
 };
@@ -103,6 +111,7 @@ StampOnline.ShowModal = function (url) {
 $(document).ready(function () {
     StampOnline.HAlignmentClick();
     StampOnline.VAlignmentClick();
+    StampOnline.BorderClick();
     StampOnline.BuildPreviewContent();
     $("input").change(StampOnline.BuildPreviewContent);
 });

@@ -271,10 +271,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Stamp.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\dashed_border.gif" />
+    <Content Include="Images\dotted_border.gif" />
     <Content Include="Images\h_align_center.gif" />
     <Content Include="Images\h_align_left.gif" />
     <Content Include="Images\h_align_right.gif" />
     <Content Include="Images\logo.jpg" />
+    <Content Include="Images\no_border.gif" />
+    <Content Include="Images\solid_border.gif" />
+    <Content Include="Images\v_align_bottom.gif" />
+    <Content Include="Images\v_align_center.gif" />
+    <Content Include="Images\v_align_top.gif" />
     <Content Include="Models\Stamp.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Stamp.edmx</DependentUpon>
