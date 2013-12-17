@@ -1,4 +1,4 @@
-﻿@model StampOnline.Models.OStamp
+﻿@model StampOnline.ViewModels.OStampVM
 
 @{
     ViewBag.Title = "Step 2";
@@ -46,29 +46,29 @@
         <div id="optionsFirstRow">
             <fieldset id="HorAlign">
                 <legend>Horizontal Alignment:</legend>
-                <img title="Left" alt="Left" class="alignmentImage" src="~/Images/h_align_left.gif" style="border:@(Model.Alignment == "Left" ? "solid" : "none")" />
+@*                <img title="Left" alt="Left" class="alignmentImage" src="~/Images/h_align_left.gif" style="border:@(Model.Alignment == "Left" ? "solid" : "none")" />
                 <img title="Center" alt="Center" class="alignmentImage" src="~/Images/h_align_center.gif" style="border:@(Model.Alignment == "Center" ? "solid" : "none")" />
-                <img title="Right" alt="Right" class="alignmentImage" src="~/Images/h_align_right.gif" style="border:@(Model.Alignment == "Right" ? "solid" : "none")"  />
-                @Html.HiddenFor(model => model.Alignment)
+                <img title="Right" alt="Right" class="alignmentImage" src="~/Images/h_align_right.gif" style="border:@(Model.Alignment == "Right" ? "solid" : "none")"  />*@
+                @Html.HiddenFor(model => model.AlignmentISI.Value)
             </fieldset>
             <fieldset id="VerAlign">
                 <legend>Vertical Alignment:</legend>
-                <img title="Top" alt="Top" class="vAlignmentImage" src="~/Images/h_align_left.gif" style="border:@(Model.VAlign == "Top" ? "solid" : "none")" />
+@*                <img title="Top" alt="Top" class="vAlignmentImage" src="~/Images/h_align_left.gif" style="border:@(Model.VAlign == "Top" ? "solid" : "none")" />
                 <img title="Center" alt="Center" class="vAlignmentImage" src="~/Images/h_align_center.gif" style="border:@(Model.VAlign == "Center" ? "solid" : "none")" />
-                <img title="Bottom" alt="Bottom" class="vAlignmentImage" src="~/Images/h_align_right.gif" style="border:@(Model.VAlign == "Bottom" ? "solid" : "none")"  />
-                @Html.HiddenFor(model => model.VAlign)
+                <img title="Bottom" alt="Bottom" class="vAlignmentImage" src="~/Images/h_align_right.gif" style="border:@(Model.VAlign == "Bottom" ? "solid" : "none")"  />*@
+                @Html.HiddenFor(model => model.VAlignISI.Value)
             </fieldset>
         </div>
         <div id="optionsSecondRow">
             <fieldset id="Border">
                 <legend>Border:</legend>
-                @Html.ValueFor(model => model.Border)
-                @Html.HiddenFor(model => model.Border)
+                @Html.ValueFor(model => model.BorderISI.Value)
+                @Html.HiddenFor(model => model.BorderISI.Value)
             </fieldset>
             <fieldset id="PadColour">
                 <legend>Pad Colour:</legend>
-                @Html.ValueFor(model => model.PadColour)
-                @Html.HiddenFor(model => model.PadColour)
+                @Html.ValueFor(model => model.PadColourISI.Value)
+                @Html.HiddenFor(model => model.PadColourISI.Value)
             </fieldset>
         </div>
     </div>

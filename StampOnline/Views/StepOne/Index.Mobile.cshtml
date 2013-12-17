@@ -1,5 +1,5 @@
-﻿@using StampOnline.Models
-@model List<OStamp>
+﻿@using StampOnline.ViewModels
+@model List<OStampVM>
 @{
     ViewBag.Title = "Step 1";
     ViewBag.Progress = 1;    
@@ -22,7 +22,7 @@
             <li>
                 <a href="/StepTwo/DisplayFromTemplate/@template.Id">
                     <img src="@template.PreviewUrl" class="previewImages" /> 
-                    <h2>@template.PadColour</h2>
+                    <h2>@template.PadColourISI</h2>
                     <p>Select this template</p>
                 </a> 
             </li>

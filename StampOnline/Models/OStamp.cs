@@ -53,6 +53,7 @@ namespace StampOnline.Models
             foreach (var stampLine in this.StampLines)
             {
                 var newStampLine = (StampLine)stampLine.Clone();
+                newStampLine.OStamp = this;
                 clone.StampLines.Add(newStampLine);
             }
             return clone;

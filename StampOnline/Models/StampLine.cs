@@ -39,7 +39,18 @@ namespace StampOnline.Models
 
         public object Clone()
         {
-            return this.MemberwiseClone();
+            return new StampLine()
+            {
+                Id = this.Id,
+                LineNr = this.LineNr,
+                Text = this.Text,
+                Bold = this.Bold,
+                Italic = this.Italic,
+                Font = this.Font,
+                FontSize = this.FontSize,
+                Underlined = this.Underlined,
+                OStampId = this.OStampId
+            };               
         }
     }
 }

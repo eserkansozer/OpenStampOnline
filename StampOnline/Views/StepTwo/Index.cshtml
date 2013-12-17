@@ -1,4 +1,4 @@
-﻿@model StampOnline.Models.OStamp
+﻿@model StampOnline.ViewModels.OStampVM
 
 @{
     ViewBag.Title = "Step 2";
@@ -20,24 +20,7 @@
     <img id="graphicOrigin" src="@imgsrc" draggable="true" ondragstart="StampOnline.Drag(event)"/>
 </div>
 <span id="dragMe" style="display:none">Drag me to preview!</span>
-<div id="preview" class="preview center">
-    <div id="TopLeft" class="graphicPlaceHolderTopDown" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
-    <div id="Top" class="graphicPlaceHolderTopDown" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
-    <div id="TopRight" class="graphicPlaceHolderTopDown" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
-    <div id="Left" class="graphicPlaceHolderMiddle" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
-    <div id="linesWrapper" class="linesWrapper">
-        <div id="line1" class="previewLine"></div>
-        <div id="line2" class="previewLine"></div>
-        <div id="line3" class="previewLine"></div>
-        <div id="line4" class="previewLine"></div>
-        <div id="line5" class="previewLine"></div>
-    </div>
-    <div id="Right" class="graphicPlaceHolderMiddle" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
-    <div id="BottomLeft" class="graphicPlaceHolderTopDown" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
-    <div id="Bottom" class="graphicPlaceHolderTopDown" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
-    <div id="BottomRight" class="graphicPlaceHolderTopDown" ondrop="StampOnline.Drop(event)" ondragover="StampOnline.AllowDrop(event)"></div>
-</div>
-
+@Html.Partial("Preview")
 @using (Html.BeginForm("Continue", "StepTwo", FormMethod.Post))
 {
     <div id="Lines">
@@ -58,35 +41,21 @@
         <div id="optionsFirstRow">
             <fieldset id="HorAlign">
                 <legend>Horizontal Alignment:</legend>
-                <img title="Left" data-sel="Left" class="alignmentImage" src="~/Images/h_align_left.gif" style="border:@(Model.Alignment == "Left" ? "solid" : "none")" />
-                <img title="Center" data-sel="Center" class="alignmentImage" src="~/Images/h_align_center.gif" style="border:@(Model.Alignment == "Center" ? "solid" : "none")" />
-                <img title="Right" data-sel="Right" class="alignmentImage" src="~/Images/h_align_right.gif" style="border:@(Model.Alignment == "Right" ? "solid" : "none")"  />
-                @Html.HiddenFor(model => model.Alignment)
+                @Html.DisplayFor(model => model.AlignmentISI, "HAlignSelectItem")                            
             </fieldset>
             <fieldset id="VerAlign">
                 <legend>Vertical Alignment:</legend>
-                <img title="Top" data-sel="Top" class="vAlignmentImage" src="~/Images/v_align_top.gif" style="border:@(Model.VAlign == "Top" ? "solid" : "none")" />
-                <img title="Center" data-sel="Center" class="vAlignmentImage" src="~/Images/v_align_center.gif" style="border:@(Model.VAlign == "Center" ? "solid" : "none")" />
-                <img title="Bottom" data-sel="Bottom" class="vAlignmentImage" src="~/Images/v_align_bottom.gif" style="border:@(Model.VAlign == "Bottom" ? "solid" : "none")"  />
-                @Html.HiddenFor(model => model.VAlign)
+                 @Html.DisplayFor(model => model.VAlignISI, "VAlignSelectItem")   
             </fieldset>
         </div>
         <div id="optionsSecondRow">
             <fieldset id="Borders">
                 <legend>Border:</legend>
-                <img title="No" data-sel="NoBorder" class="borderImage" src="~/Images/no_border.gif" style="border:@(Model.Border == "NoBorder" ? "solid" : "none")" />
-                <img title="Dotted" data-sel="Dotted" class="borderImage" src="~/Images/dotted_border.gif" style="border:@(Model.Border == "Dotted" ? "solid" : "none")" />
-                <img title="Dashed" data-sel="Dashed" class="borderImage" src="~/Images/dashed_border.gif" style="border:@(Model.Border == "Dashed" ? "solid" : "none")" />
-                <img title="Solid" data-sel="Solid" class="borderImage" src="~/Images/solid_border.gif" style="border:@(Model.Border == "Solid" ? "solid" : "none")" />                 
-                @Html.HiddenFor(model => model.Border)
+                @Html.DisplayFor(model => model.BorderISI, "BorderSelectItem") 
             </fieldset>
             <fieldset id="PadColours">
                 <legend>Pad Colour:</legend>
-                <img title="Black" data-sel="Black" class="colorImage" src="~/Images/black.gif" style="border:@(Model.PadColour == "Black" ? "solid" : "none")" />
-                <img title="Blue" data-sel="Blue" class="colorImage" src="~/Images/blue.gif" style="border:@(Model.PadColour == "Blue" ? "solid" : "none")" />
-                <img title="Red" data-sel="Red" class="colorImage" src="~/Images/red.gif" style="border:@(Model.PadColour == "Red" ? "solid" : "none")" />
-                <img title="Green" data-sel="Green" class="colorImage" src="~/Images/green.gif" style="border:@(Model.PadColour == "Green" ? "solid" : "none")" />                 
-                @Html.HiddenFor(model => model.PadColour)
+                @Html.DisplayFor(model => model.PadColourISI, "PadColourSelectItem") 
             </fieldset>
         </div>
     </div>

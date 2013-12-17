@@ -7,6 +7,8 @@ using StampOnline.Models;
 using StampOnline.DataAccess;
 using StampOnline.FileAccess;
 using StampOnline.Domain;
+using AutoMapper;
+using StampOnline.ViewModels;
 
 namespace StampOnline.Controllers
 {
@@ -39,7 +41,7 @@ namespace StampOnline.Controllers
             var blankStamp = new OStampBuilder().WithDefaultValues().Build();
             
             SessionStamp = blankStamp;
-            return View(blankStamp);
+            return View(Mapper.Map<OStampVM>(blankStamp));
         }
 
         public ActionResult DisplayFromTemplate(int id)
@@ -51,7 +53,7 @@ namespace StampOnline.Controllers
             }
 
             SessionStamp = stamp;
-            return View("Index", stamp);
+            return View("Index", Mapper.Map<OStampVM>(stamp));
         }
 
         public ActionResult UploadFile(Graphic graphic)

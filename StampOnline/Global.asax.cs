@@ -25,6 +25,7 @@ namespace StampOnline
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             BundleMobileConfig.RegisterBundles(BundleTable.Bundles);
+            AutoMapperConfig.ConfigureAutoMappings();
         }
     }
 }
