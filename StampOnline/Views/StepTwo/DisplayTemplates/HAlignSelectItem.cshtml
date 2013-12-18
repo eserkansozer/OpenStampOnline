@@ -1,0 +1,6 @@
+﻿@model StampOnline.ViewModels.ImageSelectItem
+
+<img title="Left" data-sel="Left" class="alignmentImage" src="/Images/h_align_left.gif" style="border:@(Model.Value =="Left" ? "solid" : "none")" />
+<img title="Center" data-sel="Center" class="alignmentImage" src="/Images/h_align_center.gif" style="border:@(Model.Value =="Center" ? "solid" : "none")" />
+<img title="Right" data-sel="Right" class="alignmentImage" src="/Images/h_align_right.gif" style="border:@(Model.Value =="Right" ? "solid" : "none")" />
+<input id="Alignment" name="AlignmentISI.Value" type="hidden" value="@Model.Value">

@@ -1,0 +1,7 @@
+﻿@model StampOnline.ViewModels.ImageSelectItem
+
+<img title="Black" data-sel="Black" class="colorImage" src="~/Images/black.gif" style="border:@(Model.Value == "Black" ? "solid" : "none")" />
+<img title="Blue" data-sel="Blue" class="colorImage" src="~/Images/blue.gif" style="border:@(Model.Value == "Blue" ? "solid" : "none")" />
+<img title="Red" data-sel="Red" class="colorImage" src="~/Images/red.gif" style="border:@(Model.Value == "Red" ? "solid" : "none")" />
+<img title="Green" data-sel="Green" class="colorImage" src="~/Images/green.gif" style="border:@(Model.Value == "Green" ? "solid" : "none")" />                 
+<input id="PadColour" name="PadColourISI.Value" type="hidden" value="@Model.Value">

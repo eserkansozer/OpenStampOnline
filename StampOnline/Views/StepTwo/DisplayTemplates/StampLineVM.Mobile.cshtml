@@ -1,0 +1,41 @@
+﻿@model StampOnline.ViewModels.StampLineVM
+
+@{
+    var isBold = Model.Bold ? "checked" : "none";
+    var isItalic = Model.Italic ? "checked" : "";
+    var isUnderlined = Model.Underlined ? "checked" : "";
+}
+    <tr>
+        <td class="lineNr">
+            @Html.HiddenFor(model => model.Id)
+            @Html.ValueFor(model => model.LineNr)
+            @Html.HiddenFor(model => model.LineNr)
+        </td>
+        <td>
+            @Html.EditorFor(model => model.Text)
+        </td>
+        <td>
+            @Html.DropDownListFor(model => model.Font, (List<SelectListItem>)ViewBag.FontList)
+        </td>
+        <td>
+            @Html.DropDownListFor(model => model.FontSize, (List<SelectListItem>)ViewBag.FontSizeList)       
+        </td>
+        <td>
+            <label>
+                <input type="checkbox" @Html.Raw(isBold) /><span style="font-weight: bolder">B</span>
+            </label>
+        </td>
+        <td>
+           <label>
+                <input type="checkbox" @Html.Raw(isItalic) /><span style="font-style: italic">I</span>
+            </label>
+        </td>
+        <td>
+            <label>
+                <input type="checkbox" @Html.Raw(isUnderlined) /><span style="text-decoration: underline">U</span>
+            </label>
+        </td>
+    </tr>
+
+
+

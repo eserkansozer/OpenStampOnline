@@ -1,0 +1,30 @@
+﻿@model StampOnline.ViewModels.StampLineVM
+
+    <tr>
+        <td class="lineNr">
+            @Html.HiddenFor(model => model.Id)
+            @Html.ValueFor(model => model.LineNr)
+            @Html.HiddenFor(model => model.LineNr)
+        </td>
+        <td>
+            @Html.EditorFor(model => model.Text)
+        </td>
+        <td>
+            @Html.DropDownListFor(model => model.Font, (List<SelectListItem>)ViewBag.FontList)
+        </td>
+        <td>
+            @Html.DropDownListFor(model => model.FontSize, (List<SelectListItem>)ViewBag.FontSizeList)       
+        </td>
+        <td>
+            @Html.CheckBoxFor(model => model.Bold)           
+        </td>
+        <td>
+            @Html.CheckBoxFor(model => model.Italic)
+        </td>
+        <td>
+            @Html.CheckBoxFor(model => model.Underlined)
+        </td>
+    </tr>
+
+
+

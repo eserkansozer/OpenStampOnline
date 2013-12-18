@@ -89,13 +89,13 @@ namespace StampOnline.Controllers
             return View("DisplayGraphicFrame", stamp.Graphic);
         }
 
-        public ActionResult Continue(OStamp stamp)
+        public ActionResult Continue(OStampVM stamp)
         {
             if (stamp.Graphic != null && SessionStamp.Graphic != null)
             {
                 stamp.Graphic.Url = SessionStamp.Graphic.Url;
             }
-            SessionStamp = stamp;
+            SessionStamp = Mapper.Map<OStamp>(stamp);
             return RedirectToAction("Index", "StepThree");
         }
 

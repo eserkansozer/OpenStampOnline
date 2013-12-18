@@ -1,0 +1,7 @@
+﻿@model StampOnline.ViewModels.ImageSelectItem
+
+                <img title="No" data-sel="NoBorder" class="borderImage" src="~/Images/no_border.gif" style="border:@(Model.Value == "NoBorder" ? "solid" : "none")" />
+                <img title="Dotted" data-sel="Dotted" class="borderImage" src="~/Images/dotted_border.gif" style="border:@(Model.Value == "Dotted" ? "solid" : "none")" />
+                <img title="Dashed" data-sel="Dashed" class="borderImage" src="~/Images/dashed_border.gif" style="border:@(Model.Value == "Dashed" ? "solid" : "none")" />
+                <img title="Solid" data-sel="Solid" class="borderImage" src="~/Images/solid_border.gif" style="border:@(Model.Value == "Solid" ? "solid" : "none")" />                 
+<input id="Border" name="BorderISI.Value" type="hidden" value="@Model.Value">
