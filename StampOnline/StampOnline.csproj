@@ -181,6 +181,7 @@
       <DependentUpon>Stamp.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OStampBuilder.cs" />
+    <Compile Include="Models\OStampDTO.cs" />
     <Compile Include="Models\Stamp.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -200,8 +201,7 @@
       <DependentUpon>Stamp.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ImageSelectItem.cs" />
-    <Compile Include="ViewModels\ViewModels.cs" />
+    <Compile Include="Models\ImageSelectItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\ajax-loader.gif" />
@@ -340,7 +340,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\StepOne\Index.cshtml" />
     <Content Include="Views\StepTwo\Index.cshtml" />
-    <Content Include="Views\StepTwo\DisplayTemplates\StampLineVM.cshtml" />
+    <Content Include="Views\StepTwo\DisplayTemplates\StampLine.cshtml" />
     <Content Include="Views\StepThree\Index.cshtml" />
     <Content Include="Views\StepThree\Confirmation.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
@@ -353,7 +353,7 @@
     <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
     <None Include="Views\StepOne\Index.Mobile.cshtml" />
     <Content Include="Views\StepTwo\Index.Mobile.cshtml" />
-    <Content Include="Views\StepTwo\DisplayTemplates\StampLineVM.Mobile.cshtml" />
+    <Content Include="Views\StepTwo\DisplayTemplates\StampLine.Mobile.cshtml" />
     <Content Include="Views\StepTwo\DisplayTemplates\HAlignSelectItem.cshtml" />
     <Content Include="Views\StepTwo\DisplayTemplates\VAlignSelectItem.cshtml" />
     <Content Include="Views\StepTwo\DisplayTemplates\BorderSelectItem.cshtml" />

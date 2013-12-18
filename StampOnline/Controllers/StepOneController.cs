@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using StampOnline.Models;
 using StampOnline.DataAccess;
 using AutoMapper;
-using StampOnline.ViewModels;
 
 namespace StampOnline.Controllers
 {
@@ -23,7 +22,7 @@ namespace StampOnline.Controllers
         {
             var templateList = _dataAccessor.GetTemplateStamps();
             var templateListVM = templateList
-                .Select(ostamp => Mapper.Map<OStampVM>(ostamp))
+                .Select(ostamp => Mapper.Map<OStampDTO>(ostamp))
                 .ToList();
             return View(templateListVM);
         }
