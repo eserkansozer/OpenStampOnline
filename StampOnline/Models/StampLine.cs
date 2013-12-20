@@ -11,6 +11,7 @@ namespace StampOnline.Models
 {
     using System;
     using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
     
     public partial class StampLine : ICloneable 
     {
@@ -27,6 +28,7 @@ namespace StampOnline.Models
     
         public int Id { get; set; }
         public int LineNr { get; set; }
+        [StringLength(30, ErrorMessage="You can insert max 30 characters per line")]
         public string Text { get; set; }
         public bool Bold { get; set; }
         public bool Italic { get; set; }

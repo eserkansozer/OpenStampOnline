@@ -90,12 +90,20 @@ namespace StampOnline.Controllers
 
         public ActionResult Continue(OStampDTO stamp)
         {
-            if (stamp.Graphic != null && SessionStamp.Graphic != null)
+            if (ModelState.IsValid)
             {
-                stamp.Graphic.Url = SessionStamp.Graphic.Url;
+                if (stamp.Graphic != null && SessionStamp.Graphic != null)
+                {
+                    stamp.Graphic.Url = SessionStamp.Graphic.Url;
+                }
+                SessionStamp = Mapper.Map<OStamp>(stamp);
+                return RedirectToAction("Index", "StepThree");
             }
-            SessionStamp = Mapper.Map<OStamp>(stamp);
-            return RedirectToAction("Index", "StepThree");
+            else
+            {
+                
+                return View("Index", stamp);
+            }
         }
 
         public FileResult GeneratePdf()

@@ -38,18 +38,26 @@ namespace StampOnline.Controllers
 
         public ActionResult Save(OStamp updatedStamp)
         {
-            var stampToSave = SessionStamp;
-            if (stampToSave.Graphic.Url == string.Empty)
+            if (ModelState.IsValid)
             {
-                stampToSave.Graphic = null;
+
+                var stampToSave = SessionStamp;
+                if (stampToSave.Graphic.Url == string.Empty)
+                {
+                    stampToSave.Graphic = null;
+                }
+                stampToSave.PadColour = updatedStamp.PadColour;
+                stampToSave.HandleColour = updatedStamp.HandleColour;
+                stampToSave.Order.Quantity = updatedStamp.Order.Quantity;
+
+                _dataAccessor.SaveStampOrder(stampToSave);
+
+                return View("Confirmation");
             }
-            stampToSave.PadColour = updatedStamp.PadColour;
-            stampToSave.HandleColour = updatedStamp.HandleColour;
-            stampToSave.Order.Quantity = updatedStamp.Order.Quantity;
-
-            _dataAccessor.SaveStampOrder(stampToSave);
-
-            return View("Confirmation");
+            else
+            {
+                return View("Index",updatedStamp);
+            }
         }
     }
 }

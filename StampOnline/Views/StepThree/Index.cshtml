@@ -23,8 +23,8 @@
             <option value="Red" />
             <option value="White" />
         </datalist>
-        <input id="Order_Quantity" name="Order.Quantity" type="number" min="1" max="10" value="@Model.Order.Quantity" required />
-
+        <input id="Order_Quantity" name="Order.Quantity" type="number" min="1" max="10" value="@Model.Order.Quantity" title="Please enter number of units" required />
+        @Html.ValidationSummary()
         <input type="submit" value="Save" />
 
     </div>
