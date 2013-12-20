@@ -7,9 +7,7 @@
             @Html.HiddenFor(model => model.LineNr)
         </td>
         <td>
-            <input class="text-box single-line" data-val="true" data-val-length="You can insert max 30 characters per line" 
-                data-val-length-max="30" id="@("StampLines_"+(Model.LineNr-1)+"__Text")" name="@("StampLines["+(Model.LineNr-1)+"].Text")" type="text" value="@Model.Text"
-                pattern=".{0,30}" title="Max 30 characters per line">
+            @Html.EditorFor(model => model.Text)
         </td>
         <td>
             @Html.DropDownListFor(model => model.Font, (List<SelectListItem>)ViewBag.FontList)
